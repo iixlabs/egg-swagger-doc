@@ -1,5 +1,5 @@
 {
-  "name": "egg-swagger-doc",
+  "name": "@console/egg-swagger-doc",
   "version": "2.3.2",
   "description": "swagger for egg",
   "eggPlugin": {
@@ -34,7 +34,12 @@
     "lint": "eslint .",
     "ci": "egg-bin pkgfiles --check && npm run lint && npm run cov",
     "pkgfiles": "egg-bin pkgfiles",
-    "autod": "autod"
+    "autod": "autod",
+    "publish:before": "",
+    "publish:after": "",
+    "publish:minor": "npm run publish:before && npm version minor && npm publish && npm run publish:after",
+    "publish:major": "npm run publish:before && npm version major && npm publish && npm run publish:after",
+    "publish:patch": "npm run publish:before && npm version patch && npm publish && npm run publish:after"
   },
   "files": [
     "app.js",
